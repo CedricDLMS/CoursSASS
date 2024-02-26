@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,123 +52,427 @@ table {
   border-spacing: 0;
 }
 
-header {
-  background-color: black;
-  display: flex;
+@font-face {
+  font-family: "Futura Book";
+  src: url("../fonts/futura_book_font-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-header > .menu {
+@font-face {
+  font-family: "Futura Medium";
+  src: url("../fonts/futura_medium_bt-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura Light";
+  src: url("../fonts/futura-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nimbus Roman No9 L";
+  src: url("../fonts/nimbusromno9l-regita-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Nimbus Sans L";
+  src: url("../fonts/nimbus-sans-l.regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro Regular";
+  src: url("../fonts/sofia_pro_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro Semibold";
+  src: url("../fonts/sofia_pro_semibold-webfont.woff") format("woff");
+  font-weight: 600; /* Semibold is often 600 weight */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro Light";
+  src: url("../fonts/sofia-pro-light-webfont.woff") format("woff");
+  font-weight: 300; /* Light is often 300 weight */
+  font-style: normal;
+}
+.btn {
+  font-family: Futura Light;
+  font-weight: 100;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px 30px;
+  border: solid #141414 2px;
+  box-shadow: none;
+  border-radius: 1px;
+  transition: 5ms;
+  transform: translateY(0);
   display: flex;
-  color: white;
-  position: absolute;
-  right: 0;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.btn a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #1a1a1a;
 }
 
-.textTop {
-  color: white;
+body {
+  font-family: "Futura Book";
 }
-.textTop > a {
+
+header {
+  background-color: black;
   color: white;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+header p {
+  justify-self: center;
+  float: left;
+}
+header nav {
+  float: right;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 main {
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 30px;
-  border: 1px solid black;
-  justify-content: center;
 }
-main .Titre {
+main h1 {
   text-align: center;
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+main h2 {
+  text-align: left;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+main .menu-products {
   padding-top: 10px;
   padding-bottom: 10px;
+  display: inline-block;
 }
-main .menu {
+main .menu-products ul {
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-main .menu .language {
-  justify-self: start;
-}
-main .menu .navigationM {
-  justify-self: center;
-}
-main .features-ad {
-  padding-top: 50px;
-  height: 40vw;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-main .features-ad img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-main .features-ad div {
-  position: absolute; /* Positionne le bouton de manière absolue à l'intérieur du conteneur */
-  top: 20px; /* Ajustez selon le besoin */
-  left: 20px; /* Ajustez selon le besoin */
-  /* Vous pouvez utiliser 'right' et 'bottom' à la place de 'top' et 'left' si nécessaire */
-}
-main .showcase {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  float: left;
   gap: 10px;
-  padding-top: 10px;
-}
-main .showcase section {
-  flex: 1;
-  width: auto;
-  height: 100%;
-}
-main .showcase section img {
-  width: 100%;
-  height: auto;
 }
 main .featured-products {
-  padding-top: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
-main .featured-products .menu-featured {
+main .produits {
   padding-top: 20px;
-  background-image: url(../img/ptitmenu.png);
-  background-size: contain; /* Cover ensures the background image fully covers the section */
-  background-position: center; /* Center the background image */
-  width: 100%; /* Full width of the container */
-  padding-top: 4.72%;
-  position: relative;
-}
-main .featured-products .menu-featured div {
-  height: 100%;
-  width: 100%;
   display: flex;
-  top: 0;
-  bottom: 0;
+  float: left;
+  width: 100%;
+  justify-content: space-around;
+  margin: auto;
 }
-/*.img-responsive {
-    width: 100%;
-    height: auto;
-  }
-.img-wrapper {
-    position: relative;
+main .produits h4 {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+main .produits .produit {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 100%;
+  text-align: center;
+}
+main .produits .produit img {
+  width: 100%;
+}
+main .inspired h2 {
+  text-align: center;
+}
+main .inspired p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+main .inspired .banniere2-container {
+  width: 100%;
+}
+main .inspired .banniere2-container img {
+  width: 100%;
+}
+main .baby-container {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding-top: 30px;
+}
+main .baby-container .baby1 {
+  grid-area: 1/1/2/2;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .baby-container .baby1 div .sous-titre {
+  text-align: left;
+  padding-top: 15px;
+  padding-bottom: 2px;
+}
+main .baby-container .baby1 div p {
+  text-align: left;
+  padding-top: 15px;
+}
+main .baby-container .baby2 {
+  grid-area: 1/2/2/3;
+}
+main .baby-container .baby2 img {
+  width: 100%;
+}
+main .follow {
+  padding-top: 30px;
+}
+main .follow p {
+  text-align: center;
+}
+main .follow h3 {
+  font-family: Nimbus Roman No9 L;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 30px;
+}
+main .follow div {
+  display: flex;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 0.5fr;
+  grid-column-gap: 2%;
+  grid-row-gap: 0px;
+  justify-content: center;
+}
+main .follow div img {
+  width: 10vw;
+}
+main .follow .label {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 0.5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+main .follow .label .label1 {
+  grid-area: 1/1/2/2;
+  padding-bottom: 20px;
+  border-right: 2px solid lightgrey;
+  padding-top: 10px;
+}
+main .follow .label .label1 img {
+  width: fit-content;
+  height: 2.5rem;
+}
+main .follow .label .label2 {
+  grid-area: 1/2/2/3;
+  padding-bottom: 20px;
+  border-right: 2px solid lightgrey;
+  padding-top: 10px;
+}
+main .follow .label .label2 img {
+  width: fit-content;
+  height: 2.5rem;
+}
+main .follow .label .label3 {
+  grid-area: 1/3/2/4;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+main .follow .label .label3 img {
+  width: fit-content;
+  height: 2.5rem;
+}
+main .follow .label .label4 {
+  grid-area: 2/1/3/2;
+  border-right: 2px solid lightgrey;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+main .follow .label .label5 {
+  display: flex;
+  grid-area: 2/2/3/3;
+  border-right: 2px solid lightgrey;
+  text-align: center;
+  flex-direction: column;
+}
+main .follow .label .label6 {
+  display: flex;
+  grid-area: 2/3/3/4;
+  text-align: center;
+  flex-direction: column;
+}
+main .follow .label h4 {
+  font-family: futura medium;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+main .follow .label p {
+  font-family: sofia pro light;
+  padding-top: 0.2rem;
+  font-size: 0.7rem;
 }
 
-.img-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
+.top-menu {
+  padding-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-menu nav {
+  margin-left: auto;
+  margin: auto;
+}
+.top-menu ul {
+  display: flex;
+}
+.top-menu ul li {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+.top-menu div {
+  display: flex;
+  align-items: center;
+}
+.top-menu div img {
+  padding-left: 5px;
 }
 
-.img-overlay:before {
-    content: ' ';
-    display: block;
-    /* adjust 'height' to position overlay content vertically */
+.images-Accueil {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 0.5fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+.images-Accueil .div1 {
+  grid-area: 1/1/2/3;
+  background-image: url(../img/banniere_fleurie.png);
+  height: 30vw;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 60%;
+}
+.images-Accueil .div2 {
+  grid-area: 2/1/3/2;
+}
+.images-Accueil .div2 img {
+  width: 100%;
+}
+.images-Accueil .div3 {
+  grid-area: 2/2/3/3;
+}
+.images-Accueil img {
+  width: 100%;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+footer .footer {
+  background-color: #000000;
+  height: 15rem;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+footer .footer div {
+  padding: 20px;
+  padding-top: 30px;
+  text-align: left;
+}
+footer .footer div li {
+  font-family: sofia pro light;
+  font-size: small;
+  margin-bottom: 10px;
+}
+footer .footer div p {
+  font-size: small;
+  font-style: italic;
+  color: lightgray;
+  padding-bottom: 1rem;
+}
+footer .footer div input {
+  height: 2rem;
+  padding-left: 5px;
+}
+footer .footer div input:placeholder-shown {
+  font-style: italic;
+}
+footer .footer h3 {
+  font-family: sofia pro regular;
+  text-transform: uppercase;
+  font-size: medium;
+  padding-bottom: 30px;
+}
+footer .footer .btn {
+  font-family: futura Medium;
+  font-weight: 100;
+  font-size: 14px;
+  color: black;
+  background-color: white;
+  padding: 10px 30px;
+  margin-top: 10px;
+  border: solid #ffffff 2px;
+  box-shadow: none;
+  border-radius: 1px;
+  transition: 5ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+footer .footer .btn a {
+  color: black;
+  text-decoration: none;
+}
+footer .footer .btn:hover {
+  background-color: black;
+  color: #ffffff;
+}
+footer .copyrights {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: futura light;
+  font-size: small;
+}
+footer .copyrights a {
+  color: orange;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=main.css.map */
